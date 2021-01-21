@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
+import AsyncButton from "components/units/AsyncButton/AsyncButton";
+import {faEye} from "@fortawesome/free-solid-svg-icons";
 // import {Route, Switch} from "react-router-dom";
 // import ProtectedRoute from "components/composed/ProtectedRoute";
 
@@ -14,6 +16,17 @@ import React from "react";
 // import loquesea from "components/units/AsyncButton";
 
 const App = () => {
+	const [animatedState, setAnimatedState] = useState(false);
+	const [disabled, setDisabled] = useState(false);
+	const handleClick = () => {
+		setAnimatedState(true);
+		setDisabled(true);
+		setTimeout(() => {
+			setAnimatedState(false);
+			setDisabled(false);
+		}, 5000);
+	};
+
 	return (
 		// <Switch>
 		// 	{/* Userflow */}
@@ -26,7 +39,15 @@ const App = () => {
 		// 	<ProtectedRoute component={Page404} />
 		// </Switch>
 		// <Notification />
-		<div>Hola</div>
+		<AsyncButton
+			text="Hola clase"
+			icon={faEye}
+			iconPosition="left"
+			className="success"
+			onClick={handleClick}
+			animated={animatedState}
+			disabled={disabled}
+		/>
 	);
 };
 
