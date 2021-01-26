@@ -1,21 +1,19 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
+import Body from "components/layout/Body/Body";
+// import {StyledForm} from "./styles";
 
-export class Registration extends Component {
-	constructor(props) {
-		super(props);
+const Registration = (props) => {
+	const [userName, setUserName] = useState("");
+	const [email, setEmail] = useState("");
 
-		this.state = {
-			nombreUsuario: "",
-			email: "",
-		};
-	}
-
-	changeName() {
-		this.setState({nombreUsuario: "Kevin"});
-	}
-	render() {
-		return <div>Aquí va la info de registration</div>;
-	}
-}
+	const changeName = () => {
+		setUserName("Kevin");
+	};
+	return (
+		<Body>
+			<div>Aquí va la info de registrada de:{userName}</div>;
+		</Body>
+	);
+};
 
 export default Registration;

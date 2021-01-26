@@ -11,7 +11,6 @@ export const redirectHome = () => {
 export const logout = () => {
 	localStorage.removeItem("itacademy");
 	refresh();
-	return;
 };
 
 // const login = (data) => {

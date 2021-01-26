@@ -1,10 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-//styles
 import StyledButton from "./styles";
-
-//icons
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 

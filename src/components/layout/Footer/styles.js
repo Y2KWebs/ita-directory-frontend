@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import Colors from "theme/Colors";
 
-const StyledFooter = styled.footer`
+export const StyledFooter = styled.footer`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
@@ -13,27 +13,40 @@ const StyledFooter = styled.footer`
 	border-top: 1px solid #707070;
 	opacity: 1;
 	align: center;
-
-	& > .information {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		float: right;
-		padding: 1rem;
-		color: #999999;
-	}
-
-	a {
-		text-decoration-line: none;
-		color: #999999;
-	}
-
-	& > .logo {
-		padding: 1rem;
-		// font-family: Korb-Bold;
-		font-size: 15px;
-	}
+`;
+export const Logo = styled.div`
+	width: 50%;
 `;
 
-export default StyledFooter;
+export const LogoText = styled.h2`
+	font-size: 30px;
+	font-weight: bold;
+`;
+
+export const Information = styled.div`
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	padding: 1rem;
+	color: #999999;
+`;
+export const Copyright = styled.div`
+	margin: 3px;
+`;
+
+export const Rights = styled.div`
+	margin: 3px;
+`;
+
+export const Legal = styled.div`
+	margin: 3px;
+`;
+
+export const Anchor = styled.a`
+	color: #999999;
+	text-decoration: none;
+	padding: 2px 5px;
+	&:hover {
+		color: blue;
+	}
+`;

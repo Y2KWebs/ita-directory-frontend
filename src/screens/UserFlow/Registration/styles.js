@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Colors from "theme/Colors";
 
 export const StyledForm = styled.form`
 	display: flex;
@@ -17,8 +16,8 @@ export const StyledForm = styled.form`
 	height: 14rem;
 `;
 
-export const StyledError = styled.div`
-	color: ${Colors.redColor}
-  	font-weight: 800;
-  	margin: 0 0 40px 0;
-`;
+// export const StyledError = styled.div`
+// 	color: ${Colors.redColor}
+//   	font-weight: 800;
+//   	margin: 0 0 40px 0;
+// `;
