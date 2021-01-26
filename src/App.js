@@ -1,39 +1,38 @@
 import React from "react";
+import {Route, Switch} from "react-router-dom";
+import ProtectedRoute from "components/composed/ProtectedRoute";
+
 // import AsyncButton from "components/units/AsyncButton";
 // import {faEye} from "@fortawesome/free-solid-svg-icons";
-/* import {Route, Switch} from "react-router-dom";
-import ProtectedRoute from "components/composed/ProtectedRoute";
 
 // Pages
 // import Home from "screens/Home";
 // import Page404 from "screens/404";
 
 // Userflow
-// import Login from "screens/UserFlow/Login";
-// import Registration from "screens/UserFlow/Registration";
+import Login from "screens/UserFlow/Login/Login";
+import Registration from "screens/UserFlow/Registration/Registration";
 // import RecoverPassword from "screens/UserFlow/RecoverPassword";
 
 //Input
 import Input from "components/units/Input/Input";
 /* import axios from "axios"; */
-import Login from "screens/UserFlow/Login/Login";
+// import Login from "screens/UserFlow/Login/Login";
 
 const App = () => {
 	return (
-		<>
-			<Login />
-		</>
-		// <Switch>
-		// {/* Userflow */}
-
-		// {/* <Route exact path="/login" component={Login} /> */}
-		// {/* <Route exact path="/registration" component={Registration} /> */}
-		// {/* <Route exact path="/recover-password/:hash" component={RecoverPassword} /> */}
-
-		// {/* Caregiver */}
-		// {/* <ProtectedRoute exact path="/" component={Home} /> */}
-		// {/* <ProtectedRoute component={Page404} /> */}
-		// </Switch>
+		// <>
+		// 	<Login />
+		// </>
+		<Switch>
+			{/* Userflow */}
+			<Route exact path="/login" component={Login} /> */}
+			<Route exact path="/registration" component={Registration} />
+			{/* <Route exact path="/recover-password/:hash" component={RecoverPassword} /> */}
+			{/* Rutas privadas */}
+			{/* <ProtectedRoute exact path="/" component={Home} /> */}
+			{/* <ProtectedRoute component={Page404} /> */}
+		</Switch>
 	);
 };
 

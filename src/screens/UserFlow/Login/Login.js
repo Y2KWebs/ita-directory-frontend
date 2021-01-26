@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 // import {logout} from "utils";
-
+import Body from "components/layout/Body/Body";
 // components
 import Input from "components/units/Input/Input";
 
@@ -60,7 +60,7 @@ const Login = () => {
 	};
 
 	return (
-		<div>
+		<Body title="Página de Login">
 			<form>
 				<label htmlFor="emailName"></label>
 				<Input
@@ -92,7 +92,7 @@ const Login = () => {
 				<br></br>
 				<button onClick={handleClick}>Submit</button>
 			</form>
-		</div>
+		</Body>
 	);
 };
 
