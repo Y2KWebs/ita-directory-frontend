@@ -13,6 +13,7 @@ import {
 const Footer = () => {
 	return (
 		<StyledFooter>
+			<hr />
 			<Logo>
 				<LogoText>LOGO EMPRESA </LogoText>
 			</Logo>

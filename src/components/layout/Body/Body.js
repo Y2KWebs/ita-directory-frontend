@@ -8,9 +8,7 @@ const Body = ({children, title}) => {
 		<StyledBody>
 			<Header title={title} />
 			{children}
-			{/* <div style={{padding: '2rem' }}> */}
 			<Footer />
-			{/* </div> */}
 		</StyledBody>
 	);
 };

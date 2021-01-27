@@ -12,6 +12,7 @@ import {Route, Switch} from "react-router-dom";
 // Userflow
 import Login from "screens/UserFlow/Login/Login";
 import Registration from "screens/UserFlow/Registration/Registration";
+import Profile from "screens/UserFlow/Profile/Profile";
 import Footer from "components/layout/Footer/Footer";
 // import RecoverPassword from "screens/UserFlow/RecoverPassword";
 
@@ -35,6 +36,7 @@ const App = () => {
 				<Route exact path="/login" component={Login} />
 				{/* <Route exact path="/login" component={Login}> */}
 				{/* <Login onLogin={handleLogin} /> */}
+				<Route exact path="/profile" component={Profile} />
 				<Route exact path="/registration" component={Registration} />
 				{/* <Route exact path="/recover-password/:hash" component={RecoverPassword} /> */}
 				{/* Caregiver */}
