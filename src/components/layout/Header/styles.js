@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import styled from "styled-components";
+=======
+import styled from 'styled-components'
+>>>>>>> 3b2af41ee916790b70698cb5a2fc044dcf15ebc5
 // import Colors from "theme/Colors";
 
 export const StyledHeader = styled.header`
@@ -10,7 +14,7 @@ export const StyledHeader = styled.header`
 	border: 1px solid #b5dddd;
 	max-width: 100%;
 	text-align: center;
-`;
+`
 
 export const Logo = styled.div`
 	display: flex;
@@ -19,7 +23,11 @@ export const Logo = styled.div`
 	width: 100%;
 	height: 5rem;
 	color: #823434;
+<<<<<<< HEAD
 `;
+=======
+`
+>>>>>>> 3b2af41ee916790b70698cb5a2fc044dcf15ebc5
 
 export const Routes = styled.div`
 	& > a {
@@ -27,4 +35,8 @@ export const Routes = styled.div`
 		color: #7d868b;
 		margin-left: 2rem;
 	}
+<<<<<<< HEAD
 `;
+=======
+`
+>>>>>>> 3b2af41ee916790b70698cb5a2fc044dcf15ebc5

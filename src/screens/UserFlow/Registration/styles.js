@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
@@ -21,3 +22,9 @@ export const StyledForm = styled.form`
 //   	font-weight: 800;
 //   	margin: 0 0 40px 0;
 // `;
+=======
+import styled from 'styled-components'
+
+export const StyledRegister = styled.form`
+`
+>>>>>>> 3b2af41ee916790b70698cb5a2fc044dcf15ebc5

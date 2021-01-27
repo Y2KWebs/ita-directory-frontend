@@ -1,14 +1,23 @@
+<<<<<<< HEAD
+import axios from 'axios'
+=======
 // import axios from "axios";
+>>>>>>> develop
 
 export const refresh = () => {
-	window.location.reload();
-};
+  window.location.reload()
+}
 
 export const redirectHome = () => {
-	document.location.href = "/";
-};
+  document.location.href = '/'
+}
 
 export const logout = () => {
+<<<<<<< HEAD
+  localStorage.removeItem('itacademy')
+  refresh()
+}
+=======
 	localStorage.removeItem("itacademy");
 	refresh();
 };
@@ -20,3 +29,4 @@ export const logout = () => {
 // 		console.log(err);
 // 	}
 // };
+>>>>>>> develop
