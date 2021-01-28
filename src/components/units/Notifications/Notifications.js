@@ -51,7 +51,6 @@ export const Notifications = ({notification, className, user, text, icon, time})
 						: `Ha habido un error con tu usuario o contraseña. Introducelos de nuevo.`}
 				</NotificationMessage>
 			</NotificationWrapper>
-			)
 		</>
 	);
 

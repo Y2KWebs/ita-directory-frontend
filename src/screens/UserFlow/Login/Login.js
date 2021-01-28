@@ -76,8 +76,6 @@ const Login = (onLogin, onGoToRegister) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		authenticateUser(email, password);
-		console.log("estoy aqui");
-		<Notifications notification={notification}></Notifications>;
 
 		// try {
 		// 	// , (error, token) => {
@@ -137,6 +135,7 @@ const Login = (onLogin, onGoToRegister) => {
 				<StyleRedirect>
 					No tienes cuenta? <Link to="/register"> Registrate</Link>
 				</StyleRedirect>
+				<Notifications notification={notification}></Notifications>
 			</StyledForm>
 		</Body>
 	);
