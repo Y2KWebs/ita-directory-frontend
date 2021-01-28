@@ -17,6 +17,7 @@ import Home from "screens/Home/Home";
 // Userflow
 import Login from 'screens/UserFlow/Login/Login'
 import Registration from "screens/UserFlow/Registration/Registration";
+import Profile from "screens/UserFlow/Profile/Profile";
 // import RecoverPassword from "screens/UserFlow/RecoverPassword";
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
 					<Login onLogin={handleLogin} />
 				</Route>
 				<Route exact path="/register" component={Registration} />
+				{/* <Route exact path="/profile" component={Profile} /> */}
 				{/* <Route exact path="/recover-password/:hash" component={RecoverPassword} /> */}
 
 				{/* <ProtectedRoute component={Page404} /> */}
