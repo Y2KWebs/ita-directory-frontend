@@ -58,7 +58,7 @@ AsyncButton.propTypes = {
 	text: PropTypes.string,
 	loadingText: PropTypes.string,
 	isLoading: PropTypes.bool,
-	onClick: PropTypes.func.isRequired,
+	// onClick: PropTypes.func.isRequired,
 	iconPosition: PropTypes.string,
 	className: PropTypes.string,
 	buttonStyles: PropTypes.string,

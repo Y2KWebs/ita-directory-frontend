@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Input from "components/units/Input/Input";
 import AsyncButton from "components/units/AsyncButton/AsyncButton";
 import {StyleRedirect, StyledError, StyledForm} from "./styles";
+import {Notifications} from "components/units/Notifications/Notifications";
 
 import Body from "components/layout/Body/Body";
 
@@ -19,17 +20,19 @@ const users = [
 	},
 ];
 
-const authenticateUser = (email, password) => {
-	if (users.email === email && users.password === password) console.log("the user is correct");
-	else console.log("the user is incorrect");
-};
-
 const Login = (onLogin, onGoToRegister) => {
-	const [error, setError] = useState("");
-	const [view, setView] = useState("");
+	// const [error, setError] = useState("");
+	// const [view, setView] = useState("");
 	const [animatedState, setAnimatedState] = useState(false);
 	const [disabled, setIsDisabled] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [notification, setNotificationvalue] = useState(false);
+
+	const authenticateUser = (email, password) => {
+		users.email === email && users.password === password
+			? setNotificationvalue(true)
+			: setNotificationvalue(false);
+	};
 
 	const handleClick = () => {
 		setAnimatedState(true);
@@ -58,28 +61,32 @@ const Login = (onLogin, onGoToRegister) => {
 		setIsPassError(!isPass);
 	};
 
-	const handleFocus = () => {
-		console.log("He pinchado dentro");
-	};
+	// const handleFocus = () => {
+	// 	console.log("He pinchado dentro");
+	// };
 
-	const handleBlur = () => {
-		console.log("He pinchado fuera");
-	};
+	// const handleBlur = () => {
+	// 	console.log("He pinchado fuera");
+	// };
 
 	// DATOS FORMULARIO
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		authenticateUser(email, password);
+		console.log("estoy aqui");
+		<Notifications notification={notification}></Notifications>;
 
-		try {
-			authenticateUser(email, password, (error, token) => {
-				if (error) return setError(error.message);
-				onLogin(token);
-			});
-		} catch ({message}) {
-			setError(message);
-		}
+		// try {
+		// 	// , (error, token) => {
+		// 	// 	if (error) return setError(error.message);
+		// 	// 	onLogin(token);
+		// 	// });
+		// } catch ({message}) {
+		// 	setError(message);
+		// }
 	};
 
 	return (
@@ -110,11 +117,11 @@ const Login = (onLogin, onGoToRegister) => {
 					disabled={disabled}
 					minLength={6}
 				/>
-				{error && (
+				{/* {error && (
 					<StyledError>
 						<p>{error}</p>
 					</StyledError>
-				)}
+				)} */}
 				<AsyncButton
 					text="Acceder"
 					loadingText="Accediendo"
