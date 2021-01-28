@@ -20,6 +20,12 @@ const StyledButton = styled.button`
             padding-box;
         color: ${Colors.white};
     }
+    &.orangeGradient {
+        background: transparent
+            linear-gradient(98deg, ${Colors.lightOrange} 0%, ${Colors.darkOrange} 100%) 0% 0% no-repeat
+            padding-box;
+        color: ${Colors.white};
+    }
     &.disabled {
         cursor: not-allowed;
         opacity: 0.57;

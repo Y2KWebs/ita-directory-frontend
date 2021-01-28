@@ -36,7 +36,7 @@ const App = () => {
 				<Route exact path="/login" component={Login}>
 					<Login onLogin={handleLogin} />
 				</Route>
-				<Route exact path="/registration" component={Registration} />
+				<Route exact path="/registration" component={Register} />
 				{/* <Route exact path="/recover-password/:hash" component={RecoverPassword} /> */}
 
 				{/* <ProtectedRoute component={Page404} /> */}
