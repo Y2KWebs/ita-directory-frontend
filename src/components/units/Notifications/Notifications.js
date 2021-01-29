@@ -13,14 +13,14 @@ import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 // isAuthenticated si esta autenticado o ha habido error (true or false)
 // nombreUsuario recupera del backend el nombre del user cuando isAuthenticated solo si es true
 
-export const Notifications = ({notification, className, user, text, icon, time}) => {
+export const Notifications = ({notification, className, email, text, icon, time}) => {
 	// Valores como prueba
 	// authenticated = true;
 	// user = "Kevin";
 
 	// const [notification, setNotification] = useState(false);
 
-	// metodo que lanza la notificacion
+	// // metodo que lanza la notificacion
 	// const dispatchNotification = () => {
 	// 	setNotification(true);
 	// 	setTimeout(() => {
@@ -47,7 +47,7 @@ export const Notifications = ({notification, className, user, text, icon, time})
 				/>
 				<NotificationMessage>
 					{notification
-						? `Bienvenido de nuevo ${user}. Te estamos redireccionando.`
+						? `Bienvenido de nuevo ${email}. Te estamos redireccionando.`
 						: `Ha habido un error con tu usuario o contraseña. Introducelos de nuevo.`}
 				</NotificationMessage>
 			</NotificationWrapper>
@@ -55,8 +55,8 @@ export const Notifications = ({notification, className, user, text, icon, time})
 	);
 
 	Notifications.propTypes = {
-		notification: PropTypes.bool.isRequired,
+		// notification: PropTypes.bool.isRequired,
 		className: PropTypes.string,
-		user: PropTypes.string,
+		email: PropTypes.string,
 	};
 };

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Input from "components/units/Input/Input";
 import AsyncButton from "components/units/AsyncButton/AsyncButton";
@@ -15,39 +15,40 @@ const validatePassword = (password) => PASSWORD_REGEX.test(password);
 
 const users = [
 	{
-		email: "juan@mail.com",
-		password: "Juan1992",
+		email: "m@m.com",
+		password: "123456",
 	},
 ];
 
-const Login = (onLogin, onGoToRegister) => {
+const Login = (onLogin, onGoToRegister, authenticated) => {
 	// const [error, setError] = useState("");
 	// const [view, setView] = useState("");
 	const [animatedState, setAnimatedState] = useState(false);
 	const [disabled, setIsDisabled] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
-	const [notification, setNotificationvalue] = useState(false);
+	const [notification, setNotificationvalue] = useState(authenticated);
+	useEffect(() => {
+		console.log(notification);
+	}, [notification]);
 
 	const authenticateUser = (email, password) => {
-		users.email === email && users.password === password
-			? setNotificationvalue(true)
-			: setNotificationvalue(false);
-	};
+		let authenticated = false;
+		for (let i = 0; i < users.length; i++) {
+			const user = users[i];
+			if (user.email === email && user.password === password) {
+				authenticated = true;
+			}
+		}
+		authenticated
+			? console.log("the user is correct", authenticated)
+			: console.error("the user is incorrect", authenticated);
 
-	const handleClick = () => {
-		setAnimatedState(true);
-		setIsDisabled(true);
-		setIsLoading(true);
-		setTimeout(() => {
-			setAnimatedState(false);
-			setIsDisabled(false);
-			setIsLoading(false);
-		}, 5000);
+		return authenticated;
 	};
 
 	// value - handleChange
 	const [isEmailError, setIsEmailError] = useState(false);
-	const [isPassError, setIsPassError] = useState(false);
+	const [isPassError, setIsPassError] = useState();
 
 	const handleEmailChange = (value) => {
 		setEmail(value);
@@ -75,16 +76,10 @@ const Login = (onLogin, onGoToRegister) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		authenticateUser(email, password);
 
-		// try {
-		// 	// , (error, token) => {
-		// 	// 	if (error) return setError(error.message);
-		// 	// 	onLogin(token);
-		// 	// });
-		// } catch ({message}) {
-		// 	setError(message);
-		// }
+		// authenticateUser(email, password);
+		setNotificationvalue(authenticateUser(email, password));
+		console.log(notification);
 	};
 
 	return (
@@ -95,8 +90,6 @@ const Login = (onLogin, onGoToRegister) => {
 					placeholder="email@mail.com"
 					value={email}
 					onChange={(e) => handleEmailChange(e.target.value)}
-					// onFocus={handleFocus}
-					// onBlur={handleBlur}
 					id="emailName"
 					name="emailName"
 					error={isEmailError}
@@ -107,19 +100,12 @@ const Login = (onLogin, onGoToRegister) => {
 					placeholder="Introduce tu contraseña"
 					value={password}
 					onChange={(e) => handlePasswordChange(e.target.value)}
-					// onFocus={handleFocus}
-					// onBlur={handleBlur}
 					id="passName"
 					name="passName"
 					error={isPassError}
 					disabled={disabled}
 					minLength={6}
 				/>
-				{/* {error && (
-					<StyledError>
-						<p>{error}</p>
-					</StyledError>
-				)} */}
 				<AsyncButton
 					text="Acceder"
 					loadingText="Accediendo"
@@ -135,7 +121,10 @@ const Login = (onLogin, onGoToRegister) => {
 				<StyleRedirect>
 					No tienes cuenta? <Link to="/register"> Registrate</Link>
 				</StyleRedirect>
-				<Notifications notification={notification}></Notifications>
+				{/* <button onClick={() => setNotificationvalue(true)}>Show Success</button>
+				<button onClick={() => setNotificationvalue(false)}>Show Alert</button>
+				<button onClick={() => setNotificationvalue()}>Hide</button> */}
+				{authenticated && <Notifications notification={notification}></Notifications>}
 			</StyledForm>
 		</Body>
 	);
