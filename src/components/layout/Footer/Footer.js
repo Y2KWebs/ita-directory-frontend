@@ -1,6 +1,5 @@
 import React from "react";
 import {Anchor, Copyright, Rights, Information, Legal, Logo, StyledFooter} from "./styles";
-// import Colors from "theme/Colors";
 
 const Footer = () => {
 	return (

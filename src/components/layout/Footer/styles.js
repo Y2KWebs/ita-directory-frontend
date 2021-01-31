@@ -6,20 +6,16 @@ export const StyledFooter = styled.footer`
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		padding: 2px 15vw;
+		padding: 5px 5vh;
 		border-top: 2px solid #707070;
-		margin: 15vw;
-		margin-bottom: 3rem;
-		margin-top: 1rem;
+		margin-top: 2rem;
 	}
 	@media only screen and (max-width: 1019px) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		padding: 2px 15vw;
+		padding: 2px 2vw;
 		border-top: 2px solid #707070;
-		margin: 15vw;
-		margin-bottom: 2rem;
 		margin-top: 1rem;
 	}
 	@media only screen and (max-width: 468px) {
@@ -34,7 +30,7 @@ export const StyledFooter = styled.footer`
 export const Logo = styled.div`
 	@media only screen and (min-width: 1020px) {
 		text-align: left;
-		font: normal normal normal 20px/20px Korb-Bold;
+		font: normal normal normal 16px/16px Korb-Bold;
 		letter-spacing: 0px;
 		color: ${Colors.black};
 		opacity: 1;
@@ -42,7 +38,7 @@ export const Logo = styled.div`
 	}
 	@media only screen and (max-width: 1019px) {
 		text-align: left;
-		font: normal normal normal 20px/20px Korb-Bold;
+		font: normal normal normal 16px/16px Korb-Bold;
 		letter-spacing: 0px;
 		color: ${Colors.black};
 		opacity: 1;
@@ -52,12 +48,12 @@ export const Logo = styled.div`
 	}
 	@media only screen and (max-width: 468px) {
 		text-align: center;
-		font: normal normal normal 20px/20px Korb-Bold;
+		font: normal normal normal 16px/16px Korb-Bold;
 		letter-spacing: 0px;
 		color: ${Colors.black};
 		opacity: 1;
 		font-weight: bold;
-		padding: 0 25% 0 25%;
+		padding-left: 25px;
 		flex: 4;
 	}
 `;
@@ -65,19 +61,15 @@ export const Logo = styled.div`
 export const Information = styled.div`
 	@media only screen and (min-width: 1020px) {
 		text-align: right;
-		font: normal normal normal 16px Helvetica Neue;
+		font: normal normal normal 14px Helvetica Neue;
 		letterspacing: 0;
 		color: #4a4a4a;
 		opacity: 1;
 		list-style-type: none;
-		margin: 0px;
-		padding-left: 0;
-		min-width: 10rem;
-		flex: 3;
 	}
 	@media only screen and (min-width: 1019px) {
 		text-align: right;
-		font: normal normal normal 16px Helvetica Neue;
+		font: normal normal normal 12px Helvetica Neue;
 		letterspacing: 0;
 		color: #4a4a4a;
 		opacity: 1;
@@ -85,11 +77,11 @@ export const Information = styled.div`
 		margin: 0px;
 		padding-left: 0;
 		min-width: 10rem;
-		flex: 3;
+		flex: 2;
 	}
 	@media only screen and (max-width: 468px) {
 		text-align: center;
-		font: normal normal normal 16px Helvetica Neue;
+		font: normal normal normal 12px Helvetica Neue;
 		letterspacing: 0;
 		color: #4a4a4a;
 		opacity: 1;
@@ -100,20 +92,14 @@ export const Information = styled.div`
 	}
 `;
 export const Copyright = styled.div`
-	@media only screen and (min-width: 1020px && max-width:468px) {
-		margin: 3px;
-	}
+	margin: 3px;
 `;
 export const Rights = styled.div`
-	@media only screen and (min-width: 1020px && max-width:468px) {
-		margin: 3px;
-	}
+	margin: 3px;
 `;
 
 export const Legal = styled.div`
-	@media only screen and (min-width: 1020px && max-width:468px) {
-		margin: 3px;
-	}
+	margin: 3px;
 `;
 
 export const Anchor = styled.a`
