@@ -111,7 +111,6 @@ export const StyledUl = styled.ul`
 	box-shadow: 0px 4px 10px #00000029;
 	background: transparent;
 	border-radius: 6px;
-	right: 0;
 `;
 
 export const StyledLi = styled.li`
