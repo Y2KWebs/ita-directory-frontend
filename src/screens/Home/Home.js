@@ -8,28 +8,19 @@ import FilterList from "components/composed/FilterList/FilterList";
 const Home = () => {
 	const [inputNumberValue, setInputNumberValue] = useState("");
 	const [active, setActive] = useState(false);
+	const [filtersToApply, setFiltersToApply] = useState({});
+
 	const handleInputNumberChange = (e) => setInputNumberValue(e.target.value);
-	const noFilters = {
-		priceMin: "",
-		priceMax: "",
-		sizeMin: "",
-		sizeMax: "",
-		billsIncluded: false,
-	};
+	const handleSubmit = (filters) => setFiltersToApply(filters);
 
-	const [filters, setFilters] = useState(noFilters);
-
-	const handleChange = (changedFilters) => {
-		setFilters(changedFilters);
-	};
 	useEffect(() => {
-		console.log(filters);
-	}, [filters]);
+		console.log(filtersToApply);
+	}, [filtersToApply]);
 
 	return (
 		<>
 			<div>
-				<FilterList filters={filters} onChange={handleChange} />
+				<FilterList onSubmit={handleSubmit} />
 			</div>
 			<form>
 				<InputNumber
