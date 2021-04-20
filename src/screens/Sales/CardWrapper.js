@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import BarChart from "components/composed/Chart/BarChart/BarChart";
 import ModalGraphic from "components/composed/ModalGraphic/ModalGraphic";
-import {generateData} from "utils/generateData";
+import {generateDataBar} from "utils/generateData";
 
-const data = generateData("2012-01-01", "2016-12-31", [10, 20]);
+const data = generateDataBar("2012-01-01", "2016-12-31", [10, 20]);
 
 function CardWrapper() {
 	const [active, setActive] = useState(false);
